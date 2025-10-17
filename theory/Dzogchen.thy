@@ -1,7 +1,20 @@
 theory Dzogchen
   imports Main
 begin
-
+(*
+  Complete Formal Axiomatization of Dzogchen - The Great Perfection
+  Copyright (C) 2025 Matthew Scherf
+  
+  This work is licensed under:
+  - Creative Commons Attribution 4.0 International (CC BY 4.0) for documentation
+  - BSD-3-Clause for code
+  
+  First verified: October 15, 2025
+  DOI: https://doi.org/10.5281/zenodo.17333604
+  
+  Citation: Scherf, M. (2025). Complete Formal Axiomatization of Dzogchen:
+  Machine-Verified Non-Dual Metaphysics. Isabelle/HOL formalization.
+*)
 (* ------------------------ Types & Predicates ------------------------ *)
 
 typedecl entity
