@@ -1,4 +1,4 @@
-session Rigpa = HOL +
+session Dzogchen = HOL +
   options [browser_info = true, document = pdf, document_output = "document"]
   directories "theory"
   theories Dzogchen

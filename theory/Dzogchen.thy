@@ -1,6 +1,9 @@
 theory Dzogchen
   imports Main
 begin
+(* Enable Nitpick and set global model-search heuristics *)
+nitpick_params [user_axioms = true, format = 3, show_all, max_threads = 2, card = 1,2,3,4,5]
+
 (*
   Complete Formal Axiomatization of Dzogchen - The Great Perfection
   Copyright (C) 2025 Matthew Scherf
@@ -171,5 +174,82 @@ qed
 theorem All_Phenomena_SelfLiberate:
   "ALL p. Phenomenon p --> SelfLiberated p"
   using Phenomena_SelfLiberated by blast
+
+section \<open>Nitpick model checks (diagnostics)\<close>
+
+nitpick_params [user_axioms = true, format = 3, show_all, max_threads = 2, card = 1,2,3,4,5]
+
+(* Global consistency *)
+lemma Dzogchen_Consistency: True
+  nitpick [satisfy, expect = genuine]
+  oops
+
+(* There exists a Ground distinct from at least one Phenomenon (helps avoid all-in-one models) *)
+lemma Phenomenon_and_Ground_distinct__Model:
+  "\<exists>g p. Ground g \<and> Phenomenon p \<and> g \<noteq> p"
+  nitpick [satisfy, expect = genuine]
+  oops
+
+(* Witness that some phenomenon can arise from Ground *)
+lemma Phenomenon_arises__Model:
+  "\<exists>g p. Ground g \<and> Phenomenon p \<and> ArisesFrom p g"
+  nitpick [satisfy, expect = genuine]
+  oops
+
+(* Equivalence properties of NonDual should admit no counterexample *)
+lemma NonDual_reflexive__NoCounter: "\<forall>x. NonDual x x"
+  nitpick [expect = none]
+  oops
+
+lemma NonDual_symmetric__NoCounter: "\<forall>x y. NonDual x y \<longrightarrow> NonDual y x"
+  nitpick [expect = none]
+  oops
+
+lemma NonDual_transitive__NoCounter:
+  "\<forall>x y z. NonDual x y \<longrightarrow> NonDual y z \<longrightarrow> NonDual x z"
+  nitpick [expect = none]
+  oops
+
+(* Kadag: Conceptual predicates (if any) do not apply to Ground *)
+lemma Kadag_exclusion__NoCounter:
+  "\<forall>g P. Ground g \<longrightarrow> Conceptual P \<longrightarrow> \<not> P g"
+  nitpick [expect = none]
+  oops
+
+(* Samsara = Nirvana at/with Ground *)
+lemma Samsara_eq_Nirvana_at_Ground__NoCounter:
+  "\<forall>x g. Ground g \<longrightarrow> NonDual x g \<longrightarrow> (Samsara x = Nirvana x)"
+  nitpick [expect = none]
+  oops
+
+(* Self-liberation of appearances *)
+lemma SelfLiberated_phenomena__NoCounter:
+  "\<forall>p. Phenomenon p \<longrightarrow> SelfLiberated p"
+  nitpick [expect = none]
+  oops
+
+(* Path: there are subjects and they can recognize Rigpa *)
+lemma Subject_recognizes_Rigpa__Model:
+  "\<exists>s r. Subject s \<and> Rigpa r \<and> Recognizes s r"
+  nitpick [satisfy, expect = genuine]
+  oops
+
+(* Subject ~ Rigpa ~ Ground chaining result *)
+lemma Subject_NonDual_Ground_NoCounter:
+  "\<forall>s g. Subject s \<and> Ground g \<longrightarrow> (\<exists>r. Rigpa r \<and> NonDual s g)"
+  nitpick [expect = none]
+ oops
+
+(* Introduction/recognition pipeline *)
+lemma Introduction_Recognition_NoCounter:
+  "\<forall>s. Subject s \<longrightarrow> (\<exists>r. Rigpa r \<and> Recognizes s r)"
+  nitpick [expect = none]
+  oops
+
+(* Buddha-nature availability *)
+lemma Primordial_Buddhahood_NoCounter:
+  "\<forall>s. Subject s \<longrightarrow> (\<exists>b. Buddha b \<and> NonDual s b)"
+  nitpick [expect = none]
+  oops
 
 end
