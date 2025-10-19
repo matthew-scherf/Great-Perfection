@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite it as below."
+type: software
+title: "Formal Axiomatization of Dzogchen Philosophy: Machine-Verified Non-Dual Metaphysics"
+abstract: "Complete formal axiomatization of Dzogchen philosophy from Tibetan Buddhism in Isabelle/HOL 2025, proving internal consistency of non-dual metaphysics including rigpa, the Ground, self-liberation, and the non-duality of samsara and nirvana. Third in a series of non-dual formalizations completing the Indian-Chinese-Tibetan triad."
+authors:
+  - family-names: "Scherf"
+    given-names: "Matthew"
+repository-code: "https://github.com/matthew-scherf/Dzogchen"
+keywords:
+  - Dzogchen
+  - Tibetan Buddhism
+  - formal verification
+  - Isabelle/HOL
+  - non-dualism
+  - rigpa
+  - theorem proving
+  - formal logic
+  - comparative philosophy
+  - Buddha-nature
+  - Great Perfection
+date-released: 2025-10-19
+version: "1.0.0"
+license: 
+  - BSD-3-Clause
+  - CC-BY-4.0
+doi: "10.5281/zenodo.17333604"
+references:
+  - type: software
+    title: "Formal Axiomatization of Advaita Vedanta"
+    authors:
+      - family-names: "Scherf"
+        given-names: "Matthew"
+    year: 2025
+    repository-code: "https://github.com/matthew-scherf/Only-One"
+  - type: software
+    title: "Formal Axiomatization of Daoism"
+    authors:
+      - family-names: "Scherf"
+        given-names: "Matthew"
+    year: 2025
+    repository-code: "https://github.com/matthew-scherf/Daoism"
