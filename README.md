@@ -12,10 +12,9 @@ This formalization represents the third in a series of machine-verified non-dual
 This project completes a triad of non-dual formalizations spanning Indian, Chinese, and Tibetan traditions. Together with Advaita Vedanta and Daoism, these verifications establish that non-dual metaphysics transcends cultural boundaries and admits precise logical treatment regardless of geographical or historical origin. The structural similarities across three independent traditions, now machine-verified, suggest that non-dualism reflects universal features of consciousness rather than contingent religious beliefs.
 
 Other work:
-
-- [Advaita Vedanta](https://github.com/matthew-scherf/Only-One/) - Formal axiomatization proving Brahman equals Atman
-- [Daoism](https://github.com/matthew-scherf/Uncarved-Block/) - Machine-verified axiomatization proving Dao equals TrueMan
-- [Empirical Non-Duality](https://github.com/matthew-scherf/The-Unique-Onic-Substrate/) - Philosophy-agnostic formalization of unified awareness
+- [Advaita Vedanta](https://github.com/matthew-scherf/Only-One/) - Machine-verified Advaita
+- [Daoism](https://github.com/matthew-scherf/Uncarved-Block/) - Machine-verified Daosim
+- [Empirical Non-Duality](https://github.com/matthew-scherf/The-Unique-Onic-Substrate/) - Machine-verified Unique Ontic Substrate
 ---
 
 ## Table of Contents
